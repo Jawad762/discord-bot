@@ -1,6 +1,12 @@
 require('dotenv').config();
-
+const http = require('http');
 const { Client, GatewayIntentBits } = require('discord.js');
+
+const server = http.createServer();
+server.listen(8000, () => {
+    console.log(`Server is running and listening on port 8000`);
+});
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
